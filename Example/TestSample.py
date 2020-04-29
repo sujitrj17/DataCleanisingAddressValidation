@@ -74,6 +74,8 @@ def checker(index_label):
 for index_label, row_series in df.iterrows():
     apiOutput = addressVerifier(row_series['Street'],"",row_series['City'],"",row_series['PostalCode'],row_series['Country'],row_series['Name 1'],"")
     df.at[index_label , 'IsAddrValid'] = apiOutput.get("verifications").get("delivery").get("success")
+    df.at[index_label,'State'] = apiOutput.get('state')
+    df.at[index_label,'CompanyName_Json'] = apiOutput.get('company')
     df.at[index_label, 'JsonOutput'] = apiOutput
     # print(row_series['Street'],"",row_series['City'],"",row_series['PostalCode'],row_series['Country'],row_series['Name 1'],"")
     # df.at[index_label, 'IsAddrValid'] = checker(index_label)

@@ -13,7 +13,7 @@ address = easypost.Address.create_and_verify(
     state="",
     zip="98270",
     country="US",
-    company="SCADA & CONTROL SYSTEMS LLC",
+    company="SCADA & CONTROL SYSTEMS",
     phone="415-456-7890"
 )
 print(address)
